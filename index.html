@@ -20,19 +20,39 @@
             <div class="bg-white rounded-lg shadow-lg p-6">
                 <h2 class="text-2xl font-semibold text-gray-800 mb-4">Tax Parameters</h2>
                 
+                <!-- Projection Years Input -->
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="projectionYears">
+                        Projection Years
+                    </label>
+                    <input type="number" id="projectionYears" min="1" max="50" value="10" step="1"
+                           class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    <p class="text-sm text-gray-500 mt-1">Number of years to project the revenue impact.</p>
+                </div>
+
+                <!-- Base GDP Input -->
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="baseGDP">
+                        Base GDP (Billions)
+                    </label>
+                    <input type="number" id="baseGDP" min="1" max="10000000" value="1000" step="100"
+                           class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    <p class="text-sm text-gray-500 mt-1">Starting GDP value in billions of dollars. This represents the economic size of the country.</p>
+                </div>
+
                 <!-- Income Tax Rate -->
                 <div class="mb-6">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="incomeTax">
                         Income Tax Rate (%)
                     </label>
-                    <input type="range" id="incomeTax" min="0" max="50" value="20" 
+                    <input type="range" id="incomeTax" min="0" max="100" value="20" 
                            class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
                     <div class="flex justify-between text-sm text-gray-600">
                         <span>0%</span>
                         <span id="incomeTaxValue">20%</span>
-                        <span>50%</span>
+                        <span>100%</span>
                     </div>
-                    <p class="text-sm text-gray-500 mt-1">Tax rate applied to personal income, which typically represents about 60% of GDP.</p>
+                    <p class="text-sm text-gray-500 mt-1">Tax rate applied to personal income, which typically represents about 60% of GDP. Some countries have had rates above 90% historically.</p>
                 </div>
 
                 <!-- Corporate Tax Rate -->
@@ -40,14 +60,14 @@
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="corporateTax">
                         Corporate Tax Rate (%)
                     </label>
-                    <input type="range" id="corporateTax" min="0" max="40" value="15" 
+                    <input type="range" id="corporateTax" min="0" max="100" value="15" 
                            class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
                     <div class="flex justify-between text-sm text-gray-600">
                         <span>0%</span>
                         <span id="corporateTaxValue">15%</span>
-                        <span>40%</span>
+                        <span>100%</span>
                     </div>
-                    <p class="text-sm text-gray-500 mt-1">Tax rate applied to corporate profits, which typically represents about 20% of GDP.</p>
+                    <p class="text-sm text-gray-500 mt-1">Tax rate applied to corporate profits, which typically represents about 20% of GDP. Some countries have had rates above 50% historically.</p>
                 </div>
 
                 <!-- Sales Tax Rate -->
@@ -55,14 +75,14 @@
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="salesTax">
                         Sales Tax Rate (%)
                     </label>
-                    <input type="range" id="salesTax" min="0" max="20" value="8" 
+                    <input type="range" id="salesTax" min="0" max="50" value="8" 
                            class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
                     <div class="flex justify-between text-sm text-gray-600">
                         <span>0%</span>
                         <span id="salesTaxValue">8%</span>
-                        <span>20%</span>
+                        <span>50%</span>
                     </div>
-                    <p class="text-sm text-gray-500 mt-1">Tax rate applied to consumer spending, which typically represents about 80% of GDP.</p>
+                    <p class="text-sm text-gray-500 mt-1">Tax rate applied to consumer spending, which typically represents about 80% of GDP. Some countries have had rates above 25% historically.</p>
                 </div>
 
                 <!-- GDP Growth Rate -->
@@ -70,14 +90,14 @@
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="gdpGrowth">
                         GDP Growth Rate (%)
                     </label>
-                    <input type="range" id="gdpGrowth" min="-5" max="10" value="2" 
+                    <input type="range" id="gdpGrowth" min="-20" max="100" value="2" 
                            class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
                     <div class="flex justify-between text-sm text-gray-600">
-                        <span>-5%</span>
+                        <span>-20%</span>
                         <span id="gdpGrowthValue">2%</span>
-                        <span>10%</span>
+                        <span>100%</span>
                     </div>
-                    <p class="text-sm text-gray-500 mt-1">Annual percentage change in GDP, affecting the tax base for future years.</p>
+                    <p class="text-sm text-gray-500 mt-1">Annual percentage change in GDP. While typical growth is 2-3%, some countries have experienced growth above 20% during rapid development or recovery periods.</p>
                 </div>
             </div>
 
