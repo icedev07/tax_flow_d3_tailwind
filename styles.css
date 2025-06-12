@@ -1,0 +1,71 @@
+/* Custom styles for range inputs */
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 8px;
+    background: #e5e7eb;
+    border-radius: 4px;
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #4f46e5;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.15s ease-in-out;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    background: #4338ca;
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #4f46e5;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.15s ease-in-out;
+    border: none;
+}
+
+input[type="range"]::-moz-range-thumb:hover {
+    background: #4338ca;
+}
+
+/* Tooltip styles */
+#tooltip {
+    pointer-events: none;
+    z-index: 100;
+    font-size: 14px;
+    line-height: 1.4;
+    max-width: 200px;
+}
+
+/* Smooth transitions */
+.transition-all {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+} 

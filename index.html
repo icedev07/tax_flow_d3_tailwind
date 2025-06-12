@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Flow Visualizer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <header class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-gray-800 mb-2">Tax Flow Visualizer</h1>
+            <p class="text-gray-600">Explore how tax rates affect government revenue</p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Left Column: Controls -->
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4">Tax Parameters</h2>
+                
+                <!-- Income Tax Rate -->
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="incomeTax">
+                        Income Tax Rate (%)
+                    </label>
+                    <input type="range" id="incomeTax" min="0" max="50" value="20" 
+                           class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+                    <div class="flex justify-between text-sm text-gray-600">
+                        <span>0%</span>
+                        <span id="incomeTaxValue">20%</span>
+                        <span>50%</span>
+                    </div>
+                </div>
+
+                <!-- Corporate Tax Rate -->
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="corporateTax">
+                        Corporate Tax Rate (%)
+                    </label>
+                    <input type="range" id="corporateTax" min="0" max="40" value="15" 
+                           class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+                    <div class="flex justify-between text-sm text-gray-600">
+                        <span>0%</span>
+                        <span id="corporateTaxValue">15%</span>
+                        <span>40%</span>
+                    </div>
+                </div>
+
+                <!-- Sales Tax Rate -->
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="salesTax">
+                        Sales Tax Rate (%)
+                    </label>
+                    <input type="range" id="salesTax" min="0" max="20" value="8" 
+                           class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+                    <div class="flex justify-between text-sm text-gray-600">
+                        <span>0%</span>
+                        <span id="salesTaxValue">8%</span>
+                        <span>20%</span>
+                    </div>
+                </div>
+
+                <!-- GDP Growth Rate -->
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="gdpGrowth">
+                        GDP Growth Rate (%)
+                    </label>
+                    <input type="range" id="gdpGrowth" min="-5" max="10" value="2" 
+                           class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+                    <div class="flex justify-between text-sm text-gray-600">
+                        <span>-5%</span>
+                        <span id="gdpGrowthValue">2%</span>
+                        <span>10%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Visualization -->
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4">Revenue Impact</h2>
+                <div id="visualization" class="w-full h-[400px]"></div>
+                <div id="tooltip" class="hidden absolute bg-white p-3 rounded shadow-lg border border-gray-200"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
