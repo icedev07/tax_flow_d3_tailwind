@@ -30,7 +30,7 @@ function initVisualization() {
 
     svg.append('g')
         .attr('class', 'y-axis')
-        .call(d3.axisLeft(yScale).ticks(5).tickFormat(d => `$${(d/1000000).toFixed(1)}B`));
+        .call(d3.axisLeft(yScale).ticks(5).tickFormat(d => `$${(d/1000000).toFixed(1)}B`).tickPadding(10));
 
     // Add axis labels
     svg.append('text')
@@ -42,7 +42,7 @@ function initVisualization() {
     svg.append('text')
         .attr('class', 'y-axis-label')
         .attr('transform', 'rotate(-90)')
-        .attr('y', -margin.left + 40)
+        .attr('y', -margin.left + 55)
         .attr('x', -(height / 2))
         .style('text-anchor', 'middle')
         .text('Revenue (Billions)');
@@ -90,7 +90,7 @@ function updateVisualization(revenue, years) {
     // Update y-axis
     svg.select('.y-axis')
         .transition().duration(500)
-        .call(d3.axisLeft(yScale).ticks(5).tickFormat(d => `$${(d/1000000).toFixed(1)}B`));
+        .call(d3.axisLeft(yScale).ticks(5).tickFormat(d => `$${(d/1000000).toFixed(1)}B`).tickPadding(10));
 
     // Remove existing line
     svg.selectAll('.revenue-line').remove();

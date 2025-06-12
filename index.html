@@ -44,12 +44,12 @@
                 <div class="mb-6">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="incomeTax">
                         Income Tax Rate (%)
+                        <span id="incomeTaxValue" class="ml-2 text-indigo-600 font-medium">20%</span>
                     </label>
                     <input type="range" id="incomeTax" min="0" max="100" value="20" 
                            class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
                     <div class="flex justify-between text-sm text-gray-600">
                         <span>0%</span>
-                        <span id="incomeTaxValue">20%</span>
                         <span>100%</span>
                     </div>
                     <p class="text-sm text-gray-500 mt-1">Tax rate applied to personal income, which typically represents about 60% of GDP. Some countries have had rates above 90% historically.</p>
@@ -59,12 +59,12 @@
                 <div class="mb-6">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="corporateTax">
                         Corporate Tax Rate (%)
+                        <span id="corporateTaxValue" class="ml-2 text-indigo-600 font-medium">15%</span>
                     </label>
                     <input type="range" id="corporateTax" min="0" max="100" value="15" 
                            class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
                     <div class="flex justify-between text-sm text-gray-600">
                         <span>0%</span>
-                        <span id="corporateTaxValue">15%</span>
                         <span>100%</span>
                     </div>
                     <p class="text-sm text-gray-500 mt-1">Tax rate applied to corporate profits, which typically represents about 20% of GDP. Some countries have had rates above 50% historically.</p>
@@ -74,13 +74,13 @@
                 <div class="mb-6">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="salesTax">
                         Sales Tax Rate (%)
+                        <span id="salesTaxValue" class="ml-2 text-indigo-600 font-medium">8%</span>
                     </label>
-                    <input type="range" id="salesTax" min="0" max="50" value="8" 
+                    <input type="range" id="salesTax" min="0" max="100" value="8" 
                            class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
                     <div class="flex justify-between text-sm text-gray-600">
                         <span>0%</span>
-                        <span id="salesTaxValue">8%</span>
-                        <span>50%</span>
+                        <span>100%</span>
                     </div>
                     <p class="text-sm text-gray-500 mt-1">Tax rate applied to consumer spending, which typically represents about 80% of GDP. Some countries have had rates above 25% historically.</p>
                 </div>
@@ -89,12 +89,12 @@
                 <div class="mb-6">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="gdpGrowth">
                         GDP Growth Rate (%)
+                        <span id="gdpGrowthValue" class="ml-2 text-indigo-600 font-medium">2%</span>
                     </label>
                     <input type="range" id="gdpGrowth" min="-20" max="100" value="2" 
                            class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
                     <div class="flex justify-between text-sm text-gray-600">
                         <span>-20%</span>
-                        <span id="gdpGrowthValue">2%</span>
                         <span>100%</span>
                     </div>
                     <p class="text-sm text-gray-500 mt-1">Annual percentage change in GDP. While typical growth is 2-3%, some countries have experienced growth above 20% during rapid development or recovery periods.</p>
